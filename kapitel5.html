@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kapitel 5</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f0f0f0;
+      padding: 40px;
+    }
+    #start-button {
+      font-size: 18px;
+      padding: 14px 28px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #start-button:hover {
+      background-color: #0056b3;
+    }
+    video {
+      width: 80%;
+      max-width: 720px;
+      display: none;
+      margin: 40px auto;      /* Zentriert horizontal */
+      display: block;
+    }
+    #weiter-button {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #weiter-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Kapitel 5</h2>
+
+  <button id="start-button">▶️ Start</button>
+
+  <video id="video5">
+    <source src="https://tuc.cloud/index.php/s/8roekBw2EJoHJzf/download" type="video/mp4">
+    Dein Browser unterstützt dieses Video nicht.
+  </video>
+
+  <br>
+
+  <button id="weiter-button" onclick="location.href='kapitel6.html'">Weiter</button>
+
+  <script>
+    const startBtn = document.getElementById('start-button');
+    const video = document.getElementById('video5');
+    const weiterBtn = document.getElementById('weiter-button');
+
+    startBtn.addEventListener('click', () => {
+      startBtn.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      weiterBtn.style.display = 'inline-block';
+    });
+  </script>
+
+</body>
+</html>
